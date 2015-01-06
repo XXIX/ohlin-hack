@@ -1,4 +1,4 @@
-#  Stencil
+#  ohlin hack powered by Stencil
 A collection of compilers to help you prototype a new web site or web application preloaded with a - [stencil-css](https://github.com/micdijkstra/stencil-css), a set of CSS helpers to help you get shit done fast.
 
 ## Getting Started
