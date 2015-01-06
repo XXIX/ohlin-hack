@@ -3,116 +3,53 @@
  */
 
 /******************************************************************
-  Base Typography
+  Collection
 ******************************************************************/
 
-body {
-  @extend %text-regular, %text-s, %line-s;
-  color: $color-base;
+.wrapper {
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+  width: 100%;
 }
 
-a {
-  color: $color-link;
+.collection-container {
+  height: 100%;
+  position: absolute;
+  width: 90%;
+  overflow: scroll;
 }
 
-a:hover {
-  color: $color-link-hover;
+.collection-left {
+  background: #F7F5F5;
+
+  .container-content {
+    height: 5000px;
+  }
 }
 
-a:active, a:focus {
-  outline: 0;
+.collection-image {
+  background: black;
+  height: 600px;
+  width: 100%;
+  margin: 0 50px 100px;
 }
 
-hr {
-  @extend %margin-vertical-xxl;
-  color: $color-line;
-  background: $color-line;
-  border: none;
-  display: block;
-  height: $border-l;
+.container-content {
+  padding: 50px;
 }
 
-h1 {
-  @extend %text-l, %text-bold;
-  @extend %lap-text-xl;
-  @extend %desk-text-xxl;
+.collection-right {
+  left: 90%;
+  .container-content {
+    height: 2000px;
+  }
 }
 
-h2 {
-  @extend %text-m, %text-bold;
-  @extend %lap-text-l;
-  @extend %desk-text-xl;
-}
-
-h3 {
-  font-size: $text-l;
-  @extend %text-s, %text-bold;
-  @extend %lap-text-m;
-  @extend %desk-text-l;
-}
-
-/******************************************************************
-  Reading Text
-******************************************************************/
-
-%reading-text {
-  @extend %text-regular, %text-s, %line-s;
-
-  a {
-    color: $color-link;
-  }
-
-  a:hover {
-    color: $color-link-hover;
-    text-decoration: underline;
-  }
-
-  a:active, a:focus {
-    outline: 0;
-  }
-
-  hr {
-    @extend %margin-vertical-l;
-    color: $color-line;
-    background: $color-line;
-    border: none;
-    display: block;
-    height: $border-s;
-  }
-
-  h1 {
-    @extend %text-l, %text-bold;
-    @extend %lap-text-xl;
-    @extend %desk-text-xxl;
-  }
-
-  h2 {
-    @extend %text-m, %text-bold;
-    @extend %lap-text-l;
-    @extend %desk-text-xl;
-  }
-
-  h3 {
-    font-size: $text-l;
-    @extend %text-s, %text-bold;
-    @extend %lap-text-m;
-    @extend %desk-text-l;
-  }
-
-  blockquote {
-    border-left: $border-xl solid $color-line;
-    @extend %text-m, %line-m, %padding-left-m;
-  }
-
-  ul, ol {
-    list-style-position: outside;
-  }
-
-  ol {
-    list-style-type: decimal;
-  }
-
-  ul {
-    list-style-type: disc;
-  }
+.collection-product {
+  background: black;
+  height: 300px;
+  width: 100%;
+  margin: 0 50px 50px;
 }

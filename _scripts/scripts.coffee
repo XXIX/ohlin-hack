@@ -1,5 +1,7 @@
+setupCollection = ->
+  $('.wrapper').scrollLeft $(window).width()/2
+
 $ ->
-  # Document Ready
+  setupCollection()
 
 $(window).load ->
-  # Window Loaded
