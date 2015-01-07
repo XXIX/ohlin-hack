@@ -1,13 +1,19 @@
 (function() {
-  var setupCollection;
+  var animateCollection, setupCollection;
+
+  animateCollection = function(position) {
+    return $('.collection-wrapper').animate({
+      scrollLeft: position
+    });
+  };
 
   setupCollection = function() {
     var collectionScrollLeft, windowWidth;
     windowWidth = $(window).width();
-    collectionScrollLeft = windowWidth / 2 - 100;
-    $('.collection-container').width(windowWidth - 100);
+    collectionScrollLeft = windowWidth / 2 - 200;
+    $('.collection-container').width(windowWidth - 200);
     $('.collection-right').css({
-      left: windowWidth - 100
+      left: windowWidth - 200
     });
     $('.collection-wrapper').on("DOMMouseScroll mousewheel", function(event) {
       var $element;
@@ -27,9 +33,7 @@
       var factor, position;
       factor = parseInt($(this).attr('data-collection-toggle'));
       position = windowWidth * factor;
-      return $('.collection-wrapper').animate({
-        scrollLeft: position
-      });
+      return animateCollection(position);
     });
     return $('.collection-wrapper').overscroll({
       scrollLeft: collectionScrollLeft,

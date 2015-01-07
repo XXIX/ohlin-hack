@@ -1,10 +1,14 @@
+animateCollection = (position) ->
+  $('.collection-wrapper').animate
+      scrollLeft: position
+
 setupCollection = ->
   windowWidth = $(window).width()
-  collectionScrollLeft = windowWidth/2 - 100
+  collectionScrollLeft = windowWidth/2 - 200
 
-  $('.collection-container').width(windowWidth - 100)
+  $('.collection-container').width(windowWidth - 200)
   $('.collection-right').css
-    left: windowWidth - 100
+    left: windowWidth - 200
 
   $('.collection-wrapper').on "DOMMouseScroll mousewheel", (event) ->
     console.log event
@@ -21,8 +25,7 @@ setupCollection = ->
   $('[data-collection-toggle]').click ->
     factor = parseInt($(this).attr('data-collection-toggle'))
     position = windowWidth * factor
-    $('.collection-wrapper').animate
-        scrollLeft: position
+    animateCollection position
 
 
   $('.collection-wrapper').overscroll
