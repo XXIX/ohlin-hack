@@ -18,10 +18,18 @@ setupCollection = ->
     position = windowWidth * factor
     animateCollection position
 
-
   $('.collection-wrapper').overscroll
    scrollLeft: collectionScrollLeft
    wheelDirection: 'vertical'
 
+  $('.collection-wrapper').scroll ->
+    if (($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height())
+      unless $('.collection-right').css('top') == 'auto'
+        $('.collection-right').css
+          top: 'auto'
+    else
+      $('.collection-right').css
+        top: $(this).scrollTop() - ($('.collection-right').height() - $(window).height())
+      console.log 'bottom!'
 $ ->
   setupCollection()

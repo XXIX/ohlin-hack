@@ -817,9 +817,23 @@
       position = windowWidth * factor;
       return animateCollection(position);
     });
-    return $('.collection-wrapper').overscroll({
+    $('.collection-wrapper').overscroll({
       scrollLeft: collectionScrollLeft,
       wheelDirection: 'vertical'
+    });
+    return $('.collection-wrapper').scroll(function() {
+      if (($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height()) {
+        if ($('.collection-right').css('top') !== 'auto') {
+          return $('.collection-right').css({
+            top: 'auto'
+          });
+        }
+      } else {
+        $('.collection-right').css({
+          top: $(this).scrollTop() - ($('.collection-right').height() - $(window).height())
+        });
+        return console.log('bottom!');
+      }
     });
   };
 
