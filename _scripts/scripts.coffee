@@ -49,6 +49,11 @@ showListing = (element) ->
   $('.listing-bg').css
     background: $(element).attr('data-bg')
 
+  $('.listing-image').css
+    background: $(element).attr('data-image')
+    width: $(element).attr('data-image-width')
+    left: $(element).attr('data-image-left')
+
 setupListing = ->
   windowHeight = $(window).height()
 

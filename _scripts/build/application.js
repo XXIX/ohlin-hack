@@ -56,8 +56,13 @@
 
   showListing = function(element) {
     console.log(element);
-    return $('.listing-bg').css({
+    $('.listing-bg').css({
       background: $(element).attr('data-bg')
+    });
+    return $('.listing-image').css({
+      background: $(element).attr('data-image'),
+      width: $(element).attr('data-image-width'),
+      left: $(element).attr('data-image-left')
     });
   };
 

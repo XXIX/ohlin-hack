@@ -74,6 +74,16 @@
   z-index: -1;
 }
 
+.listing-image {
+  background: black;
+  height: 50%;
+  width: 50%;
+  left: 25%;
+  top: 25%;
+  position: fixed;
+  z-index: 0;
+}
+
 .listing-container {
   height: 100%;
   position: relative;
