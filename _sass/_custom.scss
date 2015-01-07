@@ -6,27 +6,22 @@
   Collection
 ******************************************************************/
 
-.wrapper {
-  height: 100%;
+.collection-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
+  height: 100%;
   position: relative;
   width: 100%;
+  max-height: 100%;
 }
 
 .collection-container {
-  height: 100%;
   position: absolute;
-  width: 90%;
-  overflow: scroll;
+  height: auto;
 }
 
 .collection-left {
   background: #F7F5F5;
-
-  .container-content {
-    height: 5000px;
-  }
 }
 
 .collection-image {
@@ -37,14 +32,9 @@
 }
 
 .container-content {
-  padding: 50px;
 }
 
 .collection-right {
-  left: 90%;
-  .container-content {
-    height: 2000px;
-  }
 }
 
 .collection-product {
