@@ -818,8 +818,7 @@
       return animateCollection(position);
     });
     $('.collection-wrapper').overscroll({
-      scrollLeft: collectionScrollLeft,
-      wheelDirection: 'vertical'
+      scrollLeft: collectionScrollLeft
     });
     return $('.collection-wrapper').scroll(function() {
       if (($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height()) {

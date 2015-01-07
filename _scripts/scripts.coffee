@@ -20,7 +20,6 @@ setupCollection = ->
 
   $('.collection-wrapper').overscroll
    scrollLeft: collectionScrollLeft
-   wheelDirection: 'vertical'
 
   $('.collection-wrapper').scroll ->
     if (($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height())
