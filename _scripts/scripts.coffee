@@ -14,15 +14,15 @@ setupCollection = ->
       $element = $('.collection-right')
 
     $element.scrollTop $element.scrollTop() - event.originalEvent.wheelDeltaY
-    if event.originalEvent.detail > 0 or event.originalEvent.wheelDelta < 0 #alternative options for wheelData: wheelDeltaX & wheelDeltaY
-      #scroll down
-      console.log "Down"
-    else
-      #scroll up
-      $element.scrollTop $element.scrollTop() - 15
-      console.log "Up"
-    #prevent page fom scrolling
+    $element.find('.collection-toggle').css
+      top: $element.scrollTop() + 100
     false
+
+  $('[data-collection-toggle]').click ->
+    factor = parseInt($(this).attr('data-collection-toggle'))
+    position = windowWidth * factor
+    $('.collection-wrapper').animate
+        scrollLeft: position
 
 
   $('.collection-wrapper').overscroll

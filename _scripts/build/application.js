@@ -18,13 +18,18 @@
         $element = $('.collection-right');
       }
       $element.scrollTop($element.scrollTop() - event.originalEvent.wheelDeltaY);
-      if (event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0) {
-        console.log("Down");
-      } else {
-        $element.scrollTop($element.scrollTop() - 15);
-        console.log("Up");
-      }
+      $element.find('.collection-toggle').css({
+        top: $element.scrollTop() + 100
+      });
       return false;
+    });
+    $('[data-collection-toggle]').click(function() {
+      var factor, position;
+      factor = parseInt($(this).attr('data-collection-toggle'));
+      position = windowWidth * factor;
+      return $('.collection-wrapper').animate({
+        scrollLeft: position
+      });
     });
     return $('.collection-wrapper').overscroll({
       scrollLeft: collectionScrollLeft,

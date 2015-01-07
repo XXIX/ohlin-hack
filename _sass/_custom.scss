@@ -34,6 +34,19 @@
 }
 
 .container-content {
+  padding: 50px;
+  position: relative;
+}
+
+.collection-toggle {
+  left: 25px;
+  position: absolute;
+  top: 100px;
+}
+
+.collection-toggle-left {
+  left: auto;
+  right: 25px;
 }
 
 .collection-right {
