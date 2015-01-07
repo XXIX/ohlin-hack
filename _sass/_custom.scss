@@ -16,8 +16,10 @@
 }
 
 .collection-container {
+  overflow-y: scroll;
   position: absolute;
-  height: auto;
+  height: 100%;
+  top: 0;
 }
 
 .collection-left {
