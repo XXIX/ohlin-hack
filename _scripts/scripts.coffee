@@ -12,9 +12,6 @@ setupCollection = ->
   $('.collection-right').css
     left: windowWidth - 200
 
-  $('.collection-toggle').css
-    top: windowHeight/2
-
   $('.collection-wrapper').height $('.collection-right').height()
 
   $('[data-collection-toggle]').click ->
@@ -26,10 +23,23 @@ setupCollection = ->
    scrollLeft: collectionScrollLeft
 
   $('.collection-wrapper').scroll ->
-    console.log $('.collection-wrapper').scrollTop()
+    $('.collection-toggle').css
+      left: windowWidth - 200 - $(this).scrollLeft()
+
+    $('.collection-toggle-left').css
+      left: windowWidth - 200 - $(this).scrollLeft() - 25
+
+    if $(this).scrollTop() > windowHeight/2
+      $('.collection-toggle').css
+        top: 0
+    else
+      $('.collection-toggle').css
+        top: windowHeight/2 - $(this).scrollTop()
+
     if !(($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height())
       $('.collection-right').css
         'margin-top': $(this).scrollTop() - ($('.collection-right').height() - $(window).height())
+
     else if ($('.collection-right').offset().top + $(window).height() >= $(window).height())
       $('.collection-right').css
         'margin-top': $(this).scrollTop()

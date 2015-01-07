@@ -36,14 +36,11 @@
 }
 
 .collection-toggle {
-  left: 25px;
-  position: absolute;
-  top: 100px;
+  position: fixed;
 }
 
 .collection-toggle-left {
-  left: auto;
-  right: 25px;
+  margin-right: 50px;
 }
 
 .collection-right {

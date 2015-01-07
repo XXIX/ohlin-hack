@@ -16,9 +16,6 @@
     $('.collection-right').css({
       left: windowWidth - 200
     });
-    $('.collection-toggle').css({
-      top: windowHeight / 2
-    });
     $('.collection-wrapper').height($('.collection-right').height());
     $('[data-collection-toggle]').click(function() {
       var factor, position;
@@ -30,7 +27,21 @@
       scrollLeft: collectionScrollLeft
     });
     return $('.collection-wrapper').scroll(function() {
-      console.log($('.collection-wrapper').scrollTop());
+      $('.collection-toggle').css({
+        left: windowWidth - 200 - $(this).scrollLeft()
+      });
+      $('.collection-toggle-left').css({
+        left: windowWidth - 200 - $(this).scrollLeft() - 25
+      });
+      if ($(this).scrollTop() > windowHeight / 2) {
+        $('.collection-toggle').css({
+          top: 0
+        });
+      } else {
+        $('.collection-toggle').css({
+          top: windowHeight / 2 - $(this).scrollTop()
+        });
+      }
       if (!(($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height())) {
         return $('.collection-right').css({
           'margin-top': $(this).scrollTop() - ($('.collection-right').height() - $(window).height())
