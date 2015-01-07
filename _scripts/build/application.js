@@ -8,12 +8,16 @@
   };
 
   setupCollection = function() {
-    var collectionScrollLeft, windowWidth;
+    var collectionScrollLeft, windowHeight, windowWidth;
+    windowHeight = $(window).height();
     windowWidth = $(window).width();
     collectionScrollLeft = windowWidth / 2 - 200;
     $('.collection-container').width(windowWidth - 200);
     $('.collection-right').css({
       left: windowWidth - 200
+    });
+    $('.collection-toggle').css({
+      top: windowHeight / 2
     });
     $('.collection-wrapper').height($('.collection-right').height());
     $('[data-collection-toggle]').click(function() {
@@ -26,17 +30,15 @@
       scrollLeft: collectionScrollLeft
     });
     return $('.collection-wrapper').scroll(function() {
-      if (($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height()) {
-        if ($('.collection-right').css('top') !== 'auto') {
-          return $('.collection-right').css({
-            top: 'auto'
-          });
-        }
-      } else {
-        $('.collection-right').css({
-          top: $(this).scrollTop() - ($('.collection-right').height() - $(window).height())
+      console.log($('.collection-wrapper').scrollTop());
+      if (!(($('.collection-right').offset().top + $('.collection-right').height()) >= $(window).height())) {
+        return $('.collection-right').css({
+          'margin-top': $(this).scrollTop() - ($('.collection-right').height() - $(window).height())
         });
-        return console.log('bottom!');
+      } else if ($('.collection-right').offset().top + $(window).height() >= $(window).height()) {
+        return $('.collection-right').css({
+          'margin-top': $(this).scrollTop()
+        });
       }
     });
   };
