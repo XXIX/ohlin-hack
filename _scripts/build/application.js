@@ -1,5 +1,5 @@
 (function() {
-  var animateCollection, setupCollection;
+  var animateCollection, setupCollection, setupListing, showListing;
 
   animateCollection = function(position) {
     return $('.collection-wrapper').animate({
@@ -54,8 +54,75 @@
     });
   };
 
+  showListing = function(element) {
+    console.log(element);
+    return $('.listing-bg').css({
+      background: $(element).attr('data-bg')
+    });
+  };
+
+  setupListing = function() {
+    var waypoint, windowHeight;
+    windowHeight = $(window).height();
+    waypoint = new Waypoint({
+      element: $('[data-listing-1]'),
+      handler: function(direction) {
+        if (direction === 'down') {
+          showListing(this.element);
+        }
+      },
+      offset: 0
+    });
+    waypoint = new Waypoint({
+      element: $('[data-listing-2]'),
+      handler: function(direction) {
+        if (direction === 'down') {
+          showListing(this.element);
+        }
+      },
+      offset: 200
+    });
+    waypoint = new Waypoint({
+      element: $('[data-listing-3]'),
+      handler: function(direction) {
+        if (direction === 'down') {
+          showListing(this.element);
+        }
+      },
+      offset: 200
+    });
+    waypoint = new Waypoint({
+      element: $('[data-listing-1]'),
+      handler: function(direction) {
+        if (direction === 'up') {
+          showListing(this.element);
+        }
+      },
+      offset: -200
+    });
+    waypoint = new Waypoint({
+      element: $('[data-listing-2]'),
+      handler: function(direction) {
+        if (direction === 'up') {
+          showListing(this.element);
+        }
+      },
+      offset: -200
+    });
+    return waypoint = new Waypoint({
+      element: $('[data-listing-3]'),
+      handler: function(direction) {
+        if (direction === 'up') {
+          showListing(this.element);
+        }
+      },
+      offset: -200
+    });
+  };
+
   $(function() {
-    return setupCollection();
+    setupCollection();
+    return setupListing();
   });
 
 }).call(this);

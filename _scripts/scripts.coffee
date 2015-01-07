@@ -43,5 +43,75 @@ setupCollection = ->
     else if ($('.collection-right').offset().top + $(window).height() >= $(window).height())
       $('.collection-right').css
         'margin-top': $(this).scrollTop()
+
+showListing = (element) ->
+  console.log element
+  $('.listing-bg').css
+    background: $(element).attr('data-bg')
+
+setupListing = ->
+  windowHeight = $(window).height()
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-1]')
+    handler: (direction) ->
+      if direction == 'down'
+        showListing(this.element)
+      return
+
+    offset: 0
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-2]')
+    handler: (direction) ->
+      if direction == 'down'
+        showListing(this.element)
+      return
+
+    offset: 200
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-3]')
+    handler: (direction) ->
+      if direction == 'down'
+        showListing(this.element)
+      return
+
+    offset: 200
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-1]')
+    handler: (direction) ->
+      if direction == 'up'
+        showListing(this.element)
+      return
+
+    offset: -200
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-2]')
+    handler: (direction) ->
+      if direction == 'up'
+        showListing(this.element)
+      return
+
+    offset: -200
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-3]')
+    handler: (direction) ->
+      if direction == 'up'
+        showListing(this.element)
+      return
+
+    offset: -200
+  )
+
 $ ->
   setupCollection()
+  setupListing()

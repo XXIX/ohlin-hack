@@ -52,3 +52,40 @@
   width: 100%;
   margin: 0 50px 50px;
 }
+
+/******************************************************************
+  Listing
+******************************************************************/
+
+.listing-wrapper {
+  height: 100%;
+  margin-bottom: 0;
+
+  &:after {
+    height: 0;
+    display: none;
+  }
+}
+
+.listing-bg {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.listing-container {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  h2 {
+    width: 100%;
+    font-size: 100px;
+    height: 100px;
+    top: 50%;
+    margin-top: -50px;
+    position: absolute;
+  }
+}
