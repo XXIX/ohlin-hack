@@ -1472,7 +1472,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
   showListing = function(element) {
     console.log(element);
     $('.listing-bg').css({
-      background: $(element).attr('data-bg')
+      'background-image': $(element).attr('data-bg')
     });
     return $('.listing-image').css({
       background: $(element).attr('data-image'),
@@ -1512,6 +1512,24 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
       offset: 200
     });
     waypoint = new Waypoint({
+      element: $('[data-listing-4]'),
+      handler: function(direction) {
+        if (direction === 'down') {
+          showListing(this.element);
+        }
+      },
+      offset: 200
+    });
+    waypoint = new Waypoint({
+      element: $('[data-listing-5]'),
+      handler: function(direction) {
+        if (direction === 'down') {
+          showListing(this.element);
+        }
+      },
+      offset: 200
+    });
+    waypoint = new Waypoint({
       element: $('[data-listing-1]'),
       handler: function(direction) {
         if (direction === 'up') {
@@ -1529,8 +1547,26 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
       },
       offset: -200
     });
-    return waypoint = new Waypoint({
+    waypoint = new Waypoint({
       element: $('[data-listing-3]'),
+      handler: function(direction) {
+        if (direction === 'up') {
+          showListing(this.element);
+        }
+      },
+      offset: -200
+    });
+    waypoint = new Waypoint({
+      element: $('[data-listing-4]'),
+      handler: function(direction) {
+        if (direction === 'up') {
+          showListing(this.element);
+        }
+      },
+      offset: -200
+    });
+    return waypoint = new Waypoint({
+      element: $('[data-listing-5]'),
       handler: function(direction) {
         if (direction === 'up') {
           showListing(this.element);

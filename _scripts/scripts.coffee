@@ -47,7 +47,7 @@ setupCollection = ->
 showListing = (element) ->
   console.log element
   $('.listing-bg').css
-    background: $(element).attr('data-bg')
+    'background-image': $(element).attr('data-bg')
 
   $('.listing-image').css
     background: $(element).attr('data-image')
@@ -88,6 +88,26 @@ setupListing = ->
   )
 
   waypoint = new Waypoint(
+    element: $('[data-listing-4]')
+    handler: (direction) ->
+      if direction == 'down'
+        showListing(this.element)
+      return
+
+    offset: 200
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-5]')
+    handler: (direction) ->
+      if direction == 'down'
+        showListing(this.element)
+      return
+
+    offset: 200
+  )
+
+  waypoint = new Waypoint(
     element: $('[data-listing-1]')
     handler: (direction) ->
       if direction == 'up'
@@ -109,6 +129,26 @@ setupListing = ->
 
   waypoint = new Waypoint(
     element: $('[data-listing-3]')
+    handler: (direction) ->
+      if direction == 'up'
+        showListing(this.element)
+      return
+
+    offset: -200
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-4]')
+    handler: (direction) ->
+      if direction == 'up'
+        showListing(this.element)
+      return
+
+    offset: -200
+  )
+
+  waypoint = new Waypoint(
+    element: $('[data-listing-5]')
     handler: (direction) ->
       if direction == 'up'
         showListing(this.element)
