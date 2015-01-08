@@ -1470,7 +1470,6 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
   };
 
   showListing = function(element) {
-    console.log(element);
     $('.listing-bg').css({
       'background-image': $(element).attr('data-bg')
     });
@@ -1482,8 +1481,18 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
   };
 
   setupListing = function() {
-    var waypoint, windowHeight;
+    var image_1, image_2, image_3, image_4, image_5, waypoint, windowHeight;
     windowHeight = $(window).height();
+    image_1 = new Image();
+    image_1.src = 'assets/listing/1.png';
+    image_2 = new Image();
+    image_2.src = 'assets/listing/2.png';
+    image_3 = new Image();
+    image_3.src = 'assets/listing/3.png';
+    image_4 = new Image();
+    image_4.src = 'assets/listing/4.png';
+    image_5 = new Image();
+    image_5.src = 'assets/listing/5.png';
     waypoint = new Waypoint({
       element: $('[data-listing-1]'),
       handler: function(direction) {

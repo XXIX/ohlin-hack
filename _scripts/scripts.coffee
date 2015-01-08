@@ -45,7 +45,6 @@ setupCollection = ->
         'margin-top': $(this).scrollTop()
 
 showListing = (element) ->
-  console.log element
   $('.listing-bg').css
     'background-image': $(element).attr('data-bg')
 
@@ -56,6 +55,21 @@ showListing = (element) ->
 
 setupListing = ->
   windowHeight = $(window).height()
+
+  image_1 = new Image()
+  image_1.src = 'assets/listing/1.png'
+
+  image_2 = new Image()
+  image_2.src = 'assets/listing/2.png'
+
+  image_3 = new Image()
+  image_3.src = 'assets/listing/3.png'
+
+  image_4 = new Image()
+  image_4.src = 'assets/listing/4.png'
+
+  image_5 = new Image()
+  image_5.src = 'assets/listing/5.png'
 
   waypoint = new Waypoint(
     element: $('[data-listing-1]')
